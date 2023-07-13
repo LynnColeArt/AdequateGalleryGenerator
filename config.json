@@ -1,0 +1,6 @@
+{
+    "imagesPerPage": 12,
+    "fullSizeWidth": 1500,
+    "thumbnailSize": 400,
+    "inputDir": "./input"
+}

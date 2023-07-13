@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A Perfectly Adequate Image Gallery Generator</title>
+    <style>
+		body{
+			background-color:#000;
+			color:#fff;
+		}
+		
+	   .pagination, h1{
+		display: block;
+		padding: 20px;
+		text-align: center;
+	   }
+       #gallery{
+			display:grid;
+			grid-template-columns: auto auto auto;
+			width:60%;
+			margin:0;
+			margin-left:auto;
+			margin-right:auto;
+			
+	   }
+	   .image{
+			display:block;
+			padding: 20px;
+		    font-size: 30px;
+		    text-align: center;
+			width:20%;
+	   
+	   }
+	   .
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/luminous-lightbox/2.4.0/luminous-basic.css">
+</head>
+<body>
+    <h1>A Perfectly Adequate Image Gallery Generator</h1>
+
+    <div id="gallery">
+        {{range .Images}}
+        <div class="image">
+            <a href="{{.DisplayPath}}" data-lightbox="image-1" data-title="{{.Name}}">
+                <img src="{{.ThumbPath}}" alt="{{.Name}}">
+            </a>
+        </div>
+        {{end}}
+    </div>
+
+    <div class="pagination">
+        {{if gt .CurrentPage 1}}
+            <a href="gallery{{minus .CurrentPage 1}}.html">Previous</a>
+        {{end}}
+
+        Page {{.CurrentPage}} of {{.TotalPages}}
+
+        {{if lt .CurrentPage .TotalPages}}
+            <a href="gallery{{plus .CurrentPage 1}}.html">Next</a>
+        {{end}}
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/luminous-lightbox/2.4.0/luminous.min.js"></script>
+	<script>
+	new Luminous(document.querySelector("a:href"));
+	</script>
+</body>
+</html>
