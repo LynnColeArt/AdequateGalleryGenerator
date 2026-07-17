@@ -19,3 +19,14 @@
 
 # Go workspace file
 go.work
+
+# Local build artifacts
+/gallery
+/AdequateGalleryGenerator
+
+# Generated gallery output (created on demand by the generator)
+/output/
+
+# User source images live here; keep the dir but ignore its contents
+/input/*
+!/input/.gitkeep

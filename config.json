@@ -2,5 +2,8 @@
     "imagesPerPage": 12,
     "fullSizeWidth": 1500,
     "thumbnailSize": 400,
-    "inputDir": "./input"
+    "jpegQuality": 95,
+    "inputDir": "./input",
+    "outputDir": "./output",
+    "templatePath": "gallery.gohtml"
 }
